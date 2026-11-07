@@ -10,7 +10,7 @@
 支持**红外遥控学习**、**内置铃声**、**FM 收音机**，以及**语音播报（TTS）**。
 
 <p align="center">
-  <a href="https://github.com/marsdream/homeassistant-xiaomi-acpartner"><img src="docs/images/hacs-install.png" alt="一键安装 via HACS" width="320" /></a>
+  <a href="https://github.com/marsdream/homeassistant-xiaomi-acpartner"><img src="https://raw.githubusercontent.com/marsdream/homeassistant-xiaomi-acpartner/main/docs/images/hacs-install.png" alt="一键安装 via HACS" width="320" /></a>
 </p>
 
 <p align="center">
@@ -231,7 +231,7 @@ FM 电台直接用 `media_player` 实体播放，`source` 填 `FM 频道号`（�
 ## 更多
 
 <p align="center">
-  <a href="https://osp.io"><img src="docs/images/osp.io-logo.png" alt="开源派 osp.io" width="96" /></a>
+  <a href="https://osp.io"><img src="https://raw.githubusercontent.com/marsdream/homeassistant-xiaomi-acpartner/main/docs/images/osp.io-logo.png" alt="开源派 osp.io" width="96" /></a>
 </p>
 
 <p align="center">
