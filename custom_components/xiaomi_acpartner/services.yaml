@@ -1,0 +1,116 @@
+play_ringtone:
+  name: Play ringtone
+  description: Play a built-in ringtone on the device.
+  target:
+    entity:
+      integration: xiaomi_acpartner
+      domain: media_player
+  fields:
+    ringtone_id:
+      name: Ringtone ID
+      description: Ringtone mid, e.g. 10002.
+      required: true
+      example: 10002
+      selector:
+        number:
+          min: 1
+          max: 100000
+          mode: box
+    volume:
+      name: Volume
+      description: Playback volume, 0-100.
+      example: 60
+      selector:
+        number:
+          min: 0
+          max: 100
+          mode: slider
+
+play_user_audio:
+  name: Play custom audio
+  description: Play the audio file previously uploaded to the device.
+  target:
+    entity:
+      integration: xiaomi_acpartner
+      domain: media_player
+  fields:
+    volume:
+      name: Volume
+      description: Playback volume, 0-100.
+      example: 60
+      selector:
+        number:
+          min: 0
+          max: 100
+          mode: slider
+
+upload_audio:
+  name: Upload audio
+  description: Make the device download and store an audio file over HTTP.
+  target:
+    entity:
+      integration: xiaomi_acpartner
+      domain: media_player
+  fields:
+    url:
+      name: Audio URL
+      description: HTTP audio URL that the device can reach.
+      required: true
+      example: http://192.0.2.10:8080/tts.mp3
+      selector:
+        text:
+
+speak:
+  name: Speak
+  description: >-
+    Render a short text and play it on the device. The audio is deleted from
+    the device again once it has been played.
+  target:
+    entity:
+      integration: xiaomi_acpartner
+      domain: media_player
+  fields:
+    message:
+      name: Message
+      description: The text to speak, at most 300 characters.
+      required: true
+      example: "The washing machine is finished."
+      selector:
+        text:
+          multiline: true
+    volume:
+      name: Volume
+      description: Playback volume, 0-100.
+      example: 60
+      selector:
+        number:
+          min: 0
+          max: 100
+          mode: slider
+    speaker:
+      name: Speaker
+      description: >-
+        The Microsoft Edge voice to use, for example zh-CN-XiaoxiaoNeural.
+        A few short aliases such as zh_female_qingxin are accepted as well.
+      example: zh-CN-XiaoxiaoNeural
+      selector:
+        text:
+    api_key:
+      name: API key
+      description: >-
+        Key for the fallback text to speech service. Only needed when the
+        Edge voices are not available and a service is configured in the
+        integration options.
+      example: "ib_xxxxxxxx"
+      selector:
+        text:
+
+cleanup_audio:
+  name: Clean up audio
+  description: >-
+    Remove the uploaded audio file from the device. The device only has about
+    11 MB of storage, so it is worth cleaning up after a one-off announcement.
+  target:
+    entity:
+      integration: xiaomi_acpartner
+      domain: media_player

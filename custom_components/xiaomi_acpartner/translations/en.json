@@ -1,0 +1,120 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Xiaomi Air Conditioning Companion (gen 1)",
+        "description": "Enter the local IP address and the 32 character hexadecimal MiIO token of the device.",
+        "data": {
+          "host": "IP address",
+          "token": "MiIO token",
+          "name": "Name",
+          "area": "Area"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect, check the IP address and token",
+      "invalid_token": "The token must be 32 hexadecimal characters"
+    },
+    "abort": {
+      "already_configured": "This device is already configured"
+    }
+  },
+  "services": {
+    "play_ringtone": {
+      "name": "Play ringtone",
+      "description": "Play a built-in ringtone on the device.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "Target air conditioning companion entity"
+        },
+        "ringtone_id": {
+          "name": "Ringtone ID",
+          "description": "Ringtone mid, e.g. 10002"
+        },
+        "volume": {
+          "name": "Volume",
+          "description": "0-100"
+        }
+      }
+    },
+    "play_user_audio": {
+      "name": "Play custom audio",
+      "description": "Play the audio file previously uploaded to the device.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "Target air conditioning companion entity"
+        },
+        "volume": {
+          "name": "Volume",
+          "description": "0-100"
+        }
+      }
+    },
+    "upload_audio": {
+      "name": "Upload audio",
+      "description": "Make the device download and store an audio file over HTTP.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "Target air conditioning companion entity"
+        },
+        "url": {
+          "name": "Audio URL",
+          "description": "HTTP audio URL reachable by the device"
+        }
+      }
+    },
+    "speak": {
+      "name": "Speak",
+      "description": "Render a short text and play it on the device. The audio is removed from the device again once it has been played.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "Target air conditioning companion entity"
+        },
+        "message": {
+          "name": "Message",
+          "description": "The text to speak, at most 300 characters."
+        },
+        "volume": {
+          "name": "Volume",
+          "description": "0-100"
+        },
+        "speaker": {
+          "name": "Speaker",
+          "description": "Microsoft Edge voice name, for example zh-CN-XiaoxiaoNeural."
+        },
+        "api_key": {
+          "name": "API key",
+          "description": "Key for the fallback text to speech service."
+        }
+      }
+    },
+    "cleanup_audio": {
+      "name": "Clean up audio",
+      "description": "Remove the uploaded audio file from the device. The device only has about 11 MB of storage, so it is worth cleaning up after a one-off announcement.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity",
+          "description": "Target air conditioning companion entity"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "description": "Optional settings for the text to speech and the download address.",
+        "data": {
+          "tts_base_url": "Address the device can use to download the rendered audio",
+          "tts_api_url": "Address of a fallback text to speech service, leave empty to use the Edge voices only",
+          "tts_api_key": "API key of the fallback text to speech service"
+        }
+      }
+    }
+  }
+}

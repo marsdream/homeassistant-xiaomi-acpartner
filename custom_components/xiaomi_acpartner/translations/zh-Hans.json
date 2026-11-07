@@ -1,0 +1,120 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "小米空调伴侣（一代）",
+        "description": "填写设备的局域网 IP 与 MiIO token（32 位十六进制）。token 可从米家 App 或第三方工具获取。",
+        "data": {
+          "host": "IP 地址",
+          "token": "MiIO token",
+          "name": "名称",
+          "area": "区域"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "无法连接设备，请检查 IP 与 token",
+      "invalid_token": "token 必须是 32 位十六进制字符"
+    },
+    "abort": {
+      "already_configured": "该设备已配置"
+    }
+  },
+  "services": {
+    "play_ringtone": {
+      "name": "播放铃声",
+      "description": "播放设备内置铃声。",
+      "fields": {
+        "entity_id": {
+          "name": "实体",
+          "description": "目标空调伴侣实体"
+        },
+        "ringtone_id": {
+          "name": "铃声 ID",
+          "description": "铃声 mid，例如 10002"
+        },
+        "volume": {
+          "name": "音量",
+          "description": "0-100"
+        }
+      }
+    },
+    "play_user_audio": {
+      "name": "播放自定义音频",
+      "description": "播放先前上传到设备存储中的音频文件。",
+      "fields": {
+        "entity_id": {
+          "name": "实体",
+          "description": "目标空调伴侣实体"
+        },
+        "volume": {
+          "name": "音量",
+          "description": "0-100"
+        }
+      }
+    },
+    "upload_audio": {
+      "name": "上传音频",
+      "description": "让设备通过 HTTP 下载并保存一个音频文件。",
+      "fields": {
+        "entity_id": {
+          "name": "实体",
+          "description": "目标空调伴侣实体"
+        },
+        "url": {
+          "name": "音频地址",
+          "description": "设备可访问的 HTTP 音频地址"
+        }
+      }
+    },
+    "speak": {
+      "name": "语音播报",
+      "description": "渲染一段短文本并在设备上播放，播放结束后自动删除设备上的音频文件。",
+      "fields": {
+        "entity_id": {
+          "name": "实体",
+          "description": "目标空调伴侣实体"
+        },
+        "message": {
+          "name": "文本",
+          "description": "要播报的文本，最多 300 字。"
+        },
+        "volume": {
+          "name": "音量",
+          "description": "0-100"
+        },
+        "speaker": {
+          "name": "音色",
+          "description": "微软 Edge 音色名，例如 zh-CN-XiaoxiaoNeural。"
+        },
+        "api_key": {
+          "name": "API key",
+          "description": "备用语音服务的密钥。"
+        }
+      }
+    },
+    "cleanup_audio": {
+      "name": "清理音频",
+      "description": "删除设备上上传的音频文件。设备存储只有约 11 MB，一次性播报用完及时清理。",
+      "fields": {
+        "entity_id": {
+          "name": "实体",
+          "description": "目标空调伴侣实体"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "选项",
+        "description": "语音播报与下载地址等可选设置。",
+        "data": {
+          "tts_base_url": "设备能访问到的 Home Assistant 地址",
+          "tts_api_url": "备用语音服务地址，留空则只用 Edge 语音",
+          "tts_api_key": "备用语音服务的 API key"
+        }
+      }
+    }
+  }
+}
