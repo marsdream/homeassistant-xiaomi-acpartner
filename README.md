@@ -231,15 +231,15 @@ FM 电台直接用 `media_player` 实体播放，`source` 填 `FM 频道号`（�
 ## 更多
 
 <p align="center">
-  <a href="https://osp.io"><img src="https://cdn.jsdelivr.net/gh/marsdream/homeassistant-xiaomi-acpartner@main/docs/images/osp.io-logo.png" alt="开源派 osp.io" width="96" /></a>
+  <a href="https://stats.kina.men/q/acpartner-osp"><img src="https://cdn.jsdelivr.net/gh/marsdream/homeassistant-xiaomi-acpartner@main/docs/images/osp.io-logo.png" alt="开源派 osp.io" width="96" /></a>
 </p>
 
 <p align="center">
-  本项目来自 <a href="https://osp.io">开源派 osp.io</a> —— 一个分享新奇、有趣、实用的
+  本项目来自 <a href="https://stats.kina.men/q/acpartner-osp">开源派 osp.io</a> —— 一个分享新奇、有趣、实用的
   <b>免费开源软硬件</b> 的中文社区。折腾旧硬件、拆解协议、把厂商 App 扒掉换成
   本地直连，正是开源派最爱干的事。
 </p>
 
 <p align="center">
-  想看更多这种「把厂商的壳扒掉」的项目？去 <a href="https://osp.io">osp.io</a> 逛逛。
+  想看更多这种「把厂商的壳扒掉」的项目？去 <a href="https://stats.kina.men/q/acpartner-osp">osp.io</a> 逛逛。
 </p>
